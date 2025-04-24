@@ -1,0 +1,73 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcriptor de Audio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kari Transcriptor</h1>
+            <p>Sube un archivo de audio y obtén su transcripción</p>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <div class="upload-area" id="drop-area">
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <input type="file" id="fileInput" accept=".wav,.mp3,.ogg,.flac,.m4a" hidden>
+                        <label for="fileInput" class="file-label">
+                            <div class="icon">
+                                <span class="material-icons">cloud_upload</span>
+                            </div>
+                            <div class="text">
+                                <strong>Haz clic para seleccionar</strong> o arrastra y suelta archivos aquí
+                            </div>
+                        </label>
+                    </form>
+                </div>
+                
+                <div class="file-info hidden" id="file-info">
+                    <div class="file-details">
+                        <span id="file-name">archivo.mp3</span>
+                        <span id="file-size">2.5MB</span>
+                    </div>
+                    <button id="transcribe-btn" class="btn primary">Transcribir</button>
+                    <button id="cancel-btn" class="btn secondary">Cancelar</button>
+                </div>
+                
+                <div class="progress-container hidden" id="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-text">Transcribiendo... por favor espera</div>
+                </div>
+            </div>
+
+            <div class="results-container hidden" id="results-container">
+                <h2>Transcripción</h2>
+                <div class="transcript-box" id="transcript-text"></div>
+                <div class="actions">
+                    <button id="copy-btn" class="btn secondary">Copiar</button>
+                    <button id="download-btn" class="btn primary">Descargar</button>
+                    <button id="new-upload-btn" class="btn">Nueva transcripción</button>
+                </div>
+            </div>
+
+            <div class="error-container hidden" id="error-container">
+                <div class="error-message" id="error-message"></div>
+                <button id="error-retry-btn" class="btn">Intentar de nuevo</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 - Servicio de Transcripción de Audio</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

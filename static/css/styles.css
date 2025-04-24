@@ -1,0 +1,367 @@
+/* static/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    --primary-color: #4285f4;
+    --primary-dark: #3367d6;
+    --secondary-color: #f8f9fa;
+    --text-color: #202124;
+    --text-secondary: #5f6368;
+    --error-color: #ea4335;
+    --success-color: #34a853;
+    --border-color: #dadce0;
+    --shadow-color: rgba(60, 64, 67, 0.3);
+    --bg-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-secondary);
+}
+
+.upload-container {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.upload-area {
+    padding: 2rem;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1rem;
+}
+
+.upload-area:hover, .upload-area.dragover {
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.upload-area .icon {
+    margin-bottom: 1rem;
+}
+
+.upload-area .icon .material-icons {
+    font-size: 48px;
+    color: var(--primary-color);
+}
+
+.upload-area .text {
+    color: var(--text-secondary);
+}
+
+.file-info {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.file-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#file-name {
+    font-weight: 500;
+}
+
+#file-size {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.progress-container {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.results-container {
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.results-container h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.transcript-box {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 150px;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+    line-height: 1.7;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.error-container {
+    background-color: #fdeded;
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.error-message {
+    color: var(--error-color);
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn.secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn.secondary:hover {
+    background-color: #eef1f5;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Agregar estos estilos a tu archivo static/css/style.css */
+
+/* Contenedor de detalles de progreso */
+.progress-details {
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #dadce0;
+}
+
+/* Estilos para el log de fragmentos */
+.fragments-log {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* Estilos para los mini indicadores de fragmentos */
+.mini-chunk {
+    width: 15px;
+    height: 15px;
+    background-color: #dadce0;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.mini-chunk:hover {
+    opacity: 0.8;
+}
+
+/* Colores para los diferentes estados */
+.mini-chunk.success {
+    background-color: #34a853;
+}
+
+.mini-chunk.error {
+    background-color: #ea4335;
+}
+
+.mini-chunk.retry {
+    background-color: #fbbc05;
+}
+
+.mini-chunk.processing {
+    background-color: #4285f4;
+}
+
+/* Animación para fragmento en proceso */
+.mini-chunk.active {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos para los mensajes de log */
+.log-entry {
+    padding: 3px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-entry.info {
+    color: #5f6368;
+}
+
+.log-entry.error {
+    color: #ea4335;
+}
+
+.log-entry.success {
+    color: #34a853;
+    font-weight: bold;
+}
+
+.log-entry.warning {
+    color: #fbbc05;
+}
+
+/* Mejoras al contenedor de progreso */
+.progress-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(60, 64, 67, 0.15);
+}
+
+.progress-text {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Estilos para tooltip al hacer hover en fragmentos */
+.mini-chunk-tooltip {
+    position: absolute;
+    background-color: #202124;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.mini-chunk:hover + .mini-chunk-tooltip {
+    opacity: 1;
+}
